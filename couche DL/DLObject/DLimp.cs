@@ -10,7 +10,27 @@ namespace couche_DL.DLObject
     {
         public void addAutobus(Autobus autobus)
         {
-            ;
+            throw new NotImplementedException();
+        }
+
+        public List<Autobus> getAllAutobus()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Autobus getAutobus(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void removeAutobus(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void updateAutobus(Autobus autobus)
+        {
+            throw new NotImplementedException();
         }
     }
 }

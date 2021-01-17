@@ -5,17 +5,29 @@ using System.Text;
 
 namespace couche_DL.DLAPI
 {
-    interface IDL
+    public interface IDL
     {
         #region autobus
-        public void addAutobus(Autobus autobus);
-        public void removeAutobus(int id);
-        public void updateAutobus(Autobus autobus);
-        public Autobus getAutobus(int id);
-        public List<Autobus> getAllAutobus();
+        Boolean CreateAutobus(DO.Autobus x);
+        Boolean Deleteautobus(int ID);
+
+        DO.Autobus ReseachAAutobus(int id);
+
+        List<couche_DL.DLAPI.DO.Autobus> ReseachAllAutobus();
+
+        Boolean UpdateAutobus(DO.Autobus autobus);
 
 
 
+        #endregion
+
+        #region AdjacentStation
+        Boolean CreateAdjacentStation(DO.AdjacentStation adjacent);
+        Boolean DeleteAdjacentStation(int id);
+        DO.AdjacentStation ReseachAAdjacentStation(int id);
+        List<DO.AdjacentStation>  ReseachAllAdjacentStation();
+
+        Boolean UpdateAdajacent(DO.AdjacentStation adjacent);
         #endregion
     }
 }
