@@ -4,7 +4,8 @@ using System.Text;
 
 namespace couche_DL.DLAPI.DO
 {
-    class Line
+   public  class Line
     {
+        public int ID { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace couche_DL.DLAPI.DO
 {
-    class Trip
+    public class Trip
     {
     }
 }

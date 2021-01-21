@@ -28,6 +28,7 @@ namespace couche_DL.DLAPI
         List<DO.AdjacentStation>  ReseachAllAdjacentStation();
 
         Boolean UpdateAdajacent(DO.AdjacentStation adjacent);
+        bool CreatebusOnTrip(busOnTrip x);
         #endregion
     }
 }
