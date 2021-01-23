@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\couche DL\couche DL.csproj" />
+    <ProjectReference Include="..\DO\DO.csproj" />
   </ItemGroup>
 
 </Project>

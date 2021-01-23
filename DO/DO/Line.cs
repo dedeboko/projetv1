@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace couche_DL.DLAPI.DO
+namespace DO.DO
 {
-    public class user
+   public  class Line
     {
+        public int ID { get; set; }
     }
 }

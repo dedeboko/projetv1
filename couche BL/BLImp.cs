@@ -8,11 +8,12 @@ namespace couche_BL
     class BLImp : IBL
     {
         couche_DL.DLAPI.IDL DL = couche_DL.DLAPI.DLFactory.returnDLObject();
+
         #region AdjacentStation
 
-        public couche_DL.DLAPI.DO.AdjacentStation BOtoDOadapter(BO.AdjacentStation adjacent)
+        public DO.DO.AdjacentStation BOtoDOadapter(BO.AdjacentStation adjacent)
         {
-            couche_DL.DLAPI.DO.AdjacentStation x = new couche_DL.DLAPI.DO.AdjacentStation();
+            DO.DO.AdjacentStation x = new DO.DO.AdjacentStation();
             x.ID = adjacent.ID;
             x.Station1 = adjacent.Sation1;
             x.Station2 = adjacent.Station2;
@@ -21,7 +22,7 @@ namespace couche_BL
             return x;
         }
 
-        public BO.AdjacentStation DOtoBOadapter(couche_DL.DLAPI.DO.AdjacentStation adjacent)
+        public BO.AdjacentStation DOtoBOadapter(DO.DO.AdjacentStation adjacent)
         {
             BO.AdjacentStation x = new BO.AdjacentStation();
             x.ID = adjacent.ID;
@@ -34,7 +35,7 @@ namespace couche_BL
 
         public bool CreateAdjacentStation(BO.AdjacentStation adjacent)
         {
-            couche_DL.DLAPI.DO.AdjacentStation x = BOtoDOadapter(adjacent);
+            DO.DO.AdjacentStation x = BOtoDOadapter(adjacent);
             return DL.CreateAdjacentStation(x);
         }
 
@@ -49,13 +50,13 @@ namespace couche_BL
 
         public BO.AdjacentStation ReseachAAdjacentStation(int ID)
         {
-            couche_DL.DLAPI.DO.AdjacentStation x = DL.ReseachAAdjacentStation(ID);
+            DO.DO.AdjacentStation x = DL.ReseachAAdjacentStation(ID);
             return DOtoBOadapter(x);
         }
 
         public List<BO.AdjacentStation> ReseachAllAdjacentStation()
         {
-            List<couche_DL.DLAPI.DO.AdjacentStation> x = DL.ReseachAllAdjacentStation();
+            List<DO.DO.AdjacentStation> x = DL.ReseachAllAdjacentStation();
             List<BO.AdjacentStation> returnList = new List<BO.AdjacentStation>();
             foreach(var DO in x)
             {
@@ -133,7 +134,7 @@ namespace couche_BL
         #endregion
 
         #region busOnTrip
-        public couche_DL.DLAPI.DO.busOnTrip BOtoDOadapter(BO.busOnTrip adjacent)
+        public DO.DO.busOnTrip BOtoDOadapter(BO.busOnTrip adjacent)
         {
             couche_DL.DLAPI.DO.busOnTrip x = new couche_DL.DLAPI.DO.busOnTrip();
             x.id = adjacent.id;
@@ -146,7 +147,7 @@ namespace couche_BL
             return x;
         }
 
-        public BO.busOnTrip DOtoBOadapter(couche_DL.DLAPI.DO.busOnTrip adjacent)
+        public BO.busOnTrip DOtoBOadapter(DO.DO.busOnTrip adjacent)
         {
             BO.busOnTrip x = new BO.busOnTrip();
             x.id = adjacent.id;
@@ -176,13 +177,13 @@ namespace couche_BL
 
         public BO.busOnTrip ResearchbusOnTrip(int ID)
         {
-            couche_DL.DLAPI.DO.busOnTrip x = DL.ResearchbusOnTrip(ID);
+            DO.DO.busOnTrip x = DL.ResearchbusOnTrip(ID);
             return DOtoBOadapter(x);
         }
 
         public List<BO.busOnTrip> ReseachbusOnTrip()
         {
-            List<couche_DL.DLAPI.DO.busOnTrip> x = DL.ReseachbusOnTrip();
+            List<DO.DO.busOnTrip> x = DL.ReseachbusOnTrip();
             List<BO.busOnTrip> returnList = new List<BO.busOnTrip>();
             foreach (var DO in x)
             {
@@ -195,81 +196,27 @@ namespace couche_BL
         {
             return DL.UpdateAdajacent(BOtoDOadapter(adjacent));
         }
-        #endregion
-
-        #region BusStatus
-        public couche_DL.DLAPI.DO.BusStatus BOtoDOadapter(BO.BusStatus adjacent)
-        {
-            couche_DL.DLAPI.DO.BusStatus x = new couche_DL.DLAPI.DO.BusStatus();
-            
-            return x;
-        }
-
-        public BO.BusStatus DOtoBOadapter(couche_DL.DLAPI.DO.BusStatus adjacent)
-        {
-            BO.BusStatus x = new BO.BusStatus();
-            
-            return x;
-        }
-
-        public bool CreateAdjacentStation(BO.BusStatus status)
-        {
-            couche_DL.DLAPI.DO.BusStatus x = BOtoDOadapter(status);
-            return DL.CreateBusStatus(x);
-        }
-
-
-
-        public bool DeleteBusStatus(int ID)
-        {
-            return DL.DeleteBusStatus(ID);
-        }
-
-
-
-        public BO.BusStatus ReseachBusStatus(int ID)
-        {
-            couche_DL.DLAPI.DO.BusStatus x = DL.ReseachBusStatus(ID);
-            return DOtoBOadapter(x);
-        }
-
-        public List<BO.BusStatus> ReseachBusStatus()
-        {
-            List<couche_DL.DLAPI.DO.BusStatus> x = DL.ReseachBusStatus();
-            List<BO.BusStatus> returnList = new List<BO.BusStatus>();
-            foreach (var DO in x)
-            {
-                returnList.Add(DOtoBOadapter(DO));
-            }
-            return returnList;
-        }
-
-        public bool UpdateAdajacent(BO.BusStatus status)
-        {
-            return DL.UpdateAdajacent(BOtoDOadapter(status));
-        }
-
-        #endregion
+        #endregion        
 
         #region Line
 
-        public couche_DL.DLAPI.DO.Line BOtoDOadapter(BO.Line adjacent)//g rajoute une variable dans le line.cs
+        public DO.DO.Line BOtoDOadapter(BO.Line adjacent)//g rajoute une variable dans le line.cs
         {
-            couche_DL.DLAPI.DO.Line x = new couche_DL.DLAPI.DO.Line();
+            DO.DO.Line x = new DO.DO.Line();
            
             return x;
         }
 
-        public BO.Line DOtoBOadapter(couche_DL.DLAPI.DO.Line adjacent)
+        public BO.Line DOtoBOadapter(DO.DO.Line adjacent)
         {
             BO.Line x = new BO.Line();
             
             return x;
         }
 
-        public bool CreateAdjacentStation(BO.Line ligne)
+        public bool Createline(BO.Line ligne)
         {
-            couche_DL.DLAPI.DO.Line x = BOtoDOadapter(ligne);
+            DO.DO.Line x = BOtoDOadapter(ligne);
             return DL.CreateLine(x);
         }
 
@@ -277,20 +224,20 @@ namespace couche_BL
 
         public bool DeleteLine(int ID)
         {
-            return DL.DeleteAdjacentStation(ID);
+            return DL.DeleteLine(ID);
         }
 
 
 
         public BO.Line ReseachLine(int ID)
         {
-            couche_DL.DLAPI.DO.Line x = DL.ReseachLine(ID);
+            DO.DO.Line x = DL.ReseachLine(ID);
             return DOtoBOadapter(x);
         }
 
         public List<BO.Line> ReseachLine()
         {
-            List<couche_DL.DLAPI.DO.Line> x = DL.ReseachLine();
+            List<DO.DO.Line> x = DL.ReseachLine();
             List<BO.Line> returnList = new List<BO.Line>();
             foreach (var DO in x)
             {
@@ -307,9 +254,9 @@ namespace couche_BL
 
         #region LineStation
 
-        public couche_DL.DLAPI.DO.LineStation BOtoDOadapter(BO.LineStation line)
+        public DO.DO.LineStation BOtoDOadapter(BO.LineStation line)
         {
-            couche_DL.DLAPI.DO.LineStation x = new couche_DL.DLAPI.DO.LineStation();
+            DO.DO.LineStation x = new DO.DO.LineStation();
             x.lineLd = line.lineLd;
             x.LineStationIndex = line.LineStationIndex;
             x.nextStation = line.nextStation;
@@ -318,7 +265,7 @@ namespace couche_BL
             return x;
         }
 
-        public BO.LineStation DOtoBOadapter(couche_DL.DLAPI.DO.LineStation line)
+        public BO.LineStation DOtoBOadapter(DO.DO.LineStation line)
         {
             BO.LineStation x = new BO.LineStation();
             x.lineLd = line.lineLd;
@@ -329,10 +276,10 @@ namespace couche_BL
             return x;
         }
 
-        public bool CreateAdjacentStation(BO.LineStation line)
+        public bool CreateLineStation(BO.LineStation line)
         {
-            couche_DL.DLAPI.DO.LineStation x = BOtoDOadapter(line);
-            return DL.CreateAdjacentStation(x);
+            DO.DO.LineStation x = BOtoDOadapter(line);
+            return DL.CreateAdjacentStation(x);//je comprends pas
         }
 
 
@@ -346,13 +293,13 @@ namespace couche_BL
 
         public BO.LineStation ReseachLineStation(int ID)
         {
-            couche_DL.DLAPI.DO.LineStation x = DL.ReseachLineStation(ID);
+           DO.DO.LineStation x = DL.ReseachLineStation(ID);
             return DOtoBOadapter(x);
         }
 
         public List<BO.LineStation> ReseachLineStation()
         {
-            List<couche_DL.DLAPI.DO.LineStation> x = DL.ReseachLineStation();
+            List<DO.DO.LineStation> x = DL.ReseachLineStation();
             List<BO.LineStation> returnList = new List<BO.LineStation>();
             foreach (var DO in x)
             {
@@ -361,7 +308,7 @@ namespace couche_BL
             return returnList;
         }
 
-        public bool UpdateAdajacent(BO.LineStation line)
+        public bool UpdateLineStation(BO.LineStation line)
         {
             return DL.UpdateAdajacent(BOtoDOadapter(line));
         }
@@ -369,7 +316,7 @@ namespace couche_BL
 
         #region LineTrip
 
-        public couche_DL.DLAPI.DO.LineTrip BOtoDOadapter(BO.LineTrip LineTrip)
+        public DO.DO.LineTrip BOtoDOadapter(BO.LineTrip LineTrip)
         {
             couche_DL.DLAPI.DO.LineTrip x = new couche_DL.DLAPI.DO.LineTrip();
             x.FinishAt = LineTrip.FinishAt;
@@ -380,7 +327,7 @@ namespace couche_BL
             return x;
         }
 
-        public BO.LineTrip DOtoBOadapter(couche_DL.DLAPI.DO.LineTrip ligneTrip)
+        public BO.LineTrip DOtoBOadapter(DO.DO.LineTrip ligneTrip)
         {
             BO.LineTrip x = new BO.LineTrip();
             x.FinishAt = ligneTrip.FinishAt;
@@ -391,30 +338,30 @@ namespace couche_BL
             return x;
         }
 
-        public bool CreateAdjacentStation(BO.LineTrip adjacent)
+        public bool CreateLineTrip(BO.LineTrip adjacent)
         {
-            couche_DL.DLAPI.DO.LineTrip x = BOtoDOadapter(adjacent);
+            DO.DO.LineTrip x = BOtoDOadapter(adjacent);
             return DL.CreateAdjacentStation(x);
         }
 
 
 
-        public bool DeleteAdjacentStation(int ID)
+        public bool DeleteLineTrip(int ID)
         {
             return DL.DeleteAdjacentStation(ID);
         }
 
 
 
-        public BO.LineTrip ReseachAAdjacentStation(int ID)
+        public BO.LineTrip ReseachALineTrip(int ID)
         {
-            couche_DL.DLAPI.DO.LineTrip x = DL.ReseachAAdjacentStation(ID);
+            DO.DO.LineTrip x = DL.ReseachALineTrip(ID);
             return DOtoBOadapter(x);
         }
 
-        public List<BO.LineTrip> ReseachAllAdjacentStation()
+        public List<BO.LineTrip> ReseachAllLineTrip()
         {
-            List<couche_DL.DLAPI.DO.LineTrip> x = DL.ReseachAllAdjacentStation();
+            List<DO.DO.LineTrip> x = DL.ReseachAllLineTrip();
             List<BO.LineTrip> returnList = new List<BO.LineTrip>();
             foreach (var DO in x)
             {
@@ -423,119 +370,15 @@ namespace couche_BL
             return returnList;
         }
 
-        public bool UpdateAdajacent(BO.LineTrip adjacent)
+        public bool UpdatelineTrip(BO.LineTrip voyage)
         {
-            return DL.UpdateAdajacent(BOtoDOadapter(adjacent));
+            return DL.UpdateAdajacent(BOtoDOadapter(voyage));
         }
         #endregion
 
-        #region Trip
+        
 
-        public couche_DL.DLAPI.DO.Trip BOtoDOadapter(BO.Trip adjacent)
-        {
-            couche_DL.DLAPI.DO.Trip x = new couche_DL.DLAPI.DO.Trip();
-           
-            return x;
-        }
-
-        public BO.Trip DOtoBOadapter(couche_DL.DLAPI.DO.Trip adjacent)
-        {
-            BO.Trip x = new BO.Trip();
-           
-            return x;
-        }
-
-        public bool CreateTrip(BO.Trip trip)
-        {
-            couche_DL.DLAPI.DO.Trip x = BOtoDOadapter(trip);
-            return DL.CreateTrip(x);
-        }
-
-
-
-        public bool DeleteTrip(int ID)
-        {
-            return DL.DeleteAdjacentStation(ID);
-        }
-
-
-
-        public BO.Trip ReseachTrip(int ID)
-        {
-            couche_DL.DLAPI.DO.Trip x = DL.ReseachTrip(ID);
-            return DOtoBOadapter(x);
-        }
-
-        public List<BO.Trip> ReseachTrip()
-        {
-            List<couche_DL.DLAPI.DO.Trip> x = DL.ReseachTrip();
-            List<BO.Trip> returnList = new List<BO.Trip>();
-            foreach (var DO in x)
-            {
-                returnList.Add(DOtoBOadapter(DO));
-            }
-            return returnList;
-        }
-
-        public bool UpdateTrip(BO.Trip trip)
-        {
-            return DL.UpdateTrip(BOtoDOadapter(trip));
-        }
-        #endregion
-
-        #region user
-
-        public couche_DL.DLAPI.DO.user BOtoDOadapter(BO.user utilisateur)
-        {
-            couche_DL.DLAPI.DO.user x = new couche_DL.DLAPI.DO.user();
-            return x;
-        }
-
-        public BO.user DOtoBOadapter(couche_DL.DLAPI.DO.user utilisateur)
-        {
-            BO.user x = new BO.user();
-            
-            return x;
-        }
-
-        public bool user(BO.user utilisateur)
-        {
-            couche_DL.DLAPI.DO.user x = BOtoDOadapter(utilisateur);
-            return DL.CreateAdjacentStation(x);
-        }
-
-
-
-        public bool Deleteuser(int ID)
-        {
-            return DL.DeleteAdjacentStation(ID);
-        }
-
-
-
-        public bool user(BO.user utilisateur)
-        public BO.user Reseachuser(int ID)
-        {
-            couche_DL.DLAPI.DO.user x = DL.Reseachuser(ID);
-            return DOtoBOadapter(x);
-        }
-
-        public List<BO.user> Reseachuser()
-        {
-            List<couche_DL.DLAPI.DO.user> x = DL.Reseachuser();
-            List<BO.user> returnList = new List<BO.user>();
-            foreach (var DO in x)
-            {
-                returnList.Add(DOtoBOadapter(DO));
-            }
-            return returnList;
-        }
-
-        public bool UpdateAdajacent(BO.user utlisateur)
-        {
-            return DL.UpdateAdajacent(BOtoDOadapter(utlisateur));
-        }
-        #endregion
+       
 
 
 

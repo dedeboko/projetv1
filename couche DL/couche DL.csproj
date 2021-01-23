@@ -6,4 +6,9 @@
     <RootNamespace>couche_DL</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\couche DS\couche DS.csproj" />
+    <ProjectReference Include="..\DO\DO.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,4 @@
-﻿using couche_DL.DLAPI.DO;
+﻿using DO.DO;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,27 +8,62 @@ namespace couche_DL.DLAPI
     public interface IDL
     {
         #region autobus
-        Boolean CreateAutobus(DO.Autobus x);
+        Boolean CreateAutobus(Autobus x);
         Boolean Deleteautobus(int ID);
 
-        DO.Autobus ReseachAAutobus(int id);
+        Autobus ReseachAAutobus(int id);
 
-        List<couche_DL.DLAPI.DO.Autobus> ReseachAllAutobus();
+        List<Autobus> ReseachAllAutobus();
 
-        Boolean UpdateAutobus(DO.Autobus autobus);
+        Boolean UpdateAutobus(Autobus autobus);
 
 
 
         #endregion
 
         #region AdjacentStation
-        Boolean CreateAdjacentStation(DO.AdjacentStation adjacent);
+        Boolean CreateAdjacentStation(AdjacentStation adjacent);
         Boolean DeleteAdjacentStation(int id);
-        DO.AdjacentStation ReseachAAdjacentStation(int id);
-        List<DO.AdjacentStation>  ReseachAllAdjacentStation();
+        AdjacentStation ReseachAAdjacentStation(int id);
+        List<AdjacentStation>  ReseachAllAdjacentStation();
 
-        Boolean UpdateAdajacent(DO.AdjacentStation adjacent);
+        Boolean UpdateAdajacent(AdjacentStation adjacent);
+
+        #endregion
+
+        #region busontrip
         bool CreatebusOnTrip(busOnTrip x);
+        bool DeletebusOnTrip(int ID);
+        busOnTrip  ResearchbusOnTrip(int ID);
+        List<busOnTrip> ReseachbusOnTrip();
+        bool UpdateAdajacent (busOnTrip busontrip);
+
+        #endregion
+
+        #region line
+        bool CreateLine (Line x);
+        bool DeleteLine(int ID);
+        Line ReseachLine(int ID);
+        List<Line> ReseachLine();
+        bool UpdateAdajacent(Line ligne);
+        #endregion
+
+        #region LineStation
+        bool CreateLineStation(Line x);
+        bool DeleteLineStation(int ID);
+        Line ReseachLineStation(int ID);
+        List<Line> ReseachLineStation();
+        bool UpdateLineStation(Line ligne);
+        #endregion
+
+        #region LineTrip
+        bool CreateLineTrip(Line x);
+        bool DeleteLineTrip(int ID);
+        Line ReseachALineTrip(int ID);
+        public List<BO.LineTrip> ReseachAllLineTrip();
+        bool UpdateLineTrip( voyage);
+
+
         #endregion
     }
 }
